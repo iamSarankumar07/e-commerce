@@ -22,10 +22,6 @@ const productSchema = new mongoose.Schema({
         required: false
     },
     productDetails: {
-        styleCode: {
-            type: String,
-            required: false
-        },
         brand: {
             type: String,
             required: false
@@ -75,8 +71,8 @@ const productSchema = new mongoose.Schema({
         type: Array,
         required: false
     },
-    availableSize: {
-        type: String
+    availableSizes: {
+        type: Array
     },
     suggestions: {
         type: Array,

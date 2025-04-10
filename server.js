@@ -21,5 +21,7 @@ app.use("/v1/api", require("./routes/index"));
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
+  console.log("");
+  console.log("--------------------------");
   console.log(`-> PORT RUNNING ON ${PORT}`);
 });

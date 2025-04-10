@@ -1,15 +1,11 @@
 const mongoose = require('mongoose');
 
-const videoSchema = new mongoose.Schema({
-    title: {
+const propertiesSchema = new mongoose.Schema({
+    propKey: {
         type: String,
         required: false
     },
-    filter: {
-        type: String,
-        required: false
-    },
-    videoUrl: {
+    propValue: {
         type: String,
         required: false
     },
@@ -25,6 +21,5 @@ const videoSchema = new mongoose.Schema({
     },
 });
 
-  
 
-module.exports = mongoose.model('video', videoSchema)
+module.exports = mongoose.model('properties', propertiesSchema)

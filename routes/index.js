@@ -5,7 +5,8 @@ const cookieParser = require('cookie-parser')
 router.use(cookieParser());
 
 // router.use(require("./loginRoutes"));
-// router.use(require("./eCommerceRoutes"));
+router.use(require("./productsRoutes"));
+router.use(require("./orderRoutes"));
 
 
 module.exports = router;

@@ -1,15 +1,7 @@
-const express = require("express");
-const Login = require("../models/loginModel");
+const userModel = require("../models/user");
 const bcrypt = require("bcrypt");
 const nodemailer = require("nodemailer");
-const cookieParser = require("cookie-parser");0
 const authFile = require("../middleware/auth");
-const path = require("path");
-const app = express();
-
-app.set("view engine", "hbs");
-const viewPath = path.join(__dirname, "../view");
-app.set("views", viewPath);
 
 exports.signup = async (req, res) => {
   const { name, email, password, confirmPassword } = req.body;
@@ -145,7 +137,7 @@ exports.signup = async (req, res) => {
   }
 };
 
-exports.login = async (req, res) => {
+exports.signIn = async (req, res) => {
   try {
     const user = await Login.findOne({ email: req.body.email });
     if (!user) {

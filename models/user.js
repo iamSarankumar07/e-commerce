@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: false
     },
-    password: {
+    otp: {
         type: String,
         required: false
     },
@@ -21,6 +21,38 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: false
     },
+    addressBook: [
+        {
+            name: { 
+                type: String, 
+                required: false 
+            },
+            addressLine1: { 
+                type: String, 
+                required: false 
+            },
+            addressLine2: { 
+                type: String,
+                required: false
+            },
+            city: { 
+                type: String, 
+                required: false 
+            },
+            state: { 
+                type: String, 
+                required: false 
+            },
+            zip: { 
+                type: String, 
+                required: false 
+            },
+            country: { 
+                type: String, 
+                required: false 
+            }
+        }
+    ],
     wishList: [
         {
             productId: { 
@@ -83,6 +115,10 @@ const userSchema = new mongoose.Schema({
     otp: {
         type: String,
         required: false
+    },
+    isActive: {
+        type: Boolean,
+        required: false,
     },
     isAdmin: {
         type: Boolean,
